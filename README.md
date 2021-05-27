@@ -2,6 +2,8 @@
 
 Team : Charly Ginevra & Théo Pirouelle
 
+<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/d/dc/Logo_parcoursup.svg/1200px-Logo_parcoursup.svg.png" alt="parcoursup" style="zoom:40%;" />
+
 ---
 
 ## Table of contents
