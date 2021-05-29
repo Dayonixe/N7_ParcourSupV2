@@ -1,11 +1,10 @@
 import csv
 
 class parseFile:
-    def presenceFile(name):
+    def presenceFile(name: str) -> bool:
         """
         Vérification de la présence du fichier csv dans le répertoire courant
         :param name: Nom du fichier à vérifier
-        :type name: str
         :return: Boolean
         """
         warningColor = '\033[93m'
@@ -19,22 +18,20 @@ class parseFile:
                   + resetColor)
             return False
 
-    def parseCSV(name):
+    def parseCSV(name: str) -> list:
         """
         Découpage du fichier CSV passé en paramètre
         :param name: Nom du fichier CSV
-        :type name: str
         :return: Array
         """
         with open(name, newline='') as csvfile:
             data = list(csv.reader(csvfile, delimiter=';'))
         return data
 
-    def getNameCol(data):
+    def getNameCol(data: list) -> list:
         """
         Revoie la liste des éléments présents dans l'entête de chaque ligne
         :param data: Tableau 2D des données d'un fichier CSV
-        :type data: list
         :return: Array
         """
         list = []
@@ -43,11 +40,10 @@ class parseFile:
         list.pop(0)
         return list
 
-    def getNameRow(data):
+    def getNameRow(data: list) -> list:
         """
         Revoie la liste des éléments présents dans l'entête de chaque colonne
         :param data: Tableau 2D des données d'un fichier CSV
-        :type data: list
         :return: Array
         """
         list = data[0]
