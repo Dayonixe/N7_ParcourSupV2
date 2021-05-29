@@ -2,6 +2,8 @@
 
 Team : Charly Ginevra & Théo Pirouelle
 
+<img src="https://img.shields.io/badge/laguage-python-blue?style=flat-square" alt="laguage-python" />
+
 <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/d/dc/Logo_parcoursup.svg/langfr-250px-Logo_parcoursup.svg.png" alt="parcoursup" style="zoom:40%;" />
 
 ---
