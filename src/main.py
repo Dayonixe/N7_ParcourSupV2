@@ -15,6 +15,18 @@ def getElmtByName(list, name):
             return elmt
 
 
+def afficheRes(schools: list) -> None:
+    print("RESULT")
+    print("======")
+    for i in range(0, len(schools)):
+        print("{}.".format(i))
+        print("school : {}".format(schools[i].getName()))
+        print("student : ", end="")
+        for student in schools[i].getCandidates():
+            print("{} ".format(student.getName()), end="")
+        print()
+
+
 def main():
     students = list()
     schools = list()
@@ -67,6 +79,7 @@ def main():
     nbRound = StableMarriage.marriage(students, schools)
 
     # 6. Output
+    afficheRes(schools)
 
 if __name__ == '__main__':
     main()
