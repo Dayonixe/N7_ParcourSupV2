@@ -6,15 +6,22 @@ class School:
     Class School
     """
 
-    def __init__(self, capacity: int, preferences: list) -> None:
+    def __init__(self, name: str) -> None:
         """
         Constructor of the class school
-        :param capacity: capacity of the school
-        :param preferences: preferences of the school
+        """
+        self.name = name
+        self.capacity = 0
+        self.preferences = list()
+        self.candidate = list()
+
+    def setCapacity(self, capacity: int) -> None:
+        """
+        Set the capacity of the school
+        :param capacity:
+        :return:
         """
         self.capacity = capacity
-        self.setPreferences(preferences)
-        self.candidate = list()
 
     def setPreferences(self, preferences: list) -> None:
         """
@@ -41,6 +48,27 @@ class School:
             return True
         else:
             return False
+
+    def getCapacity(self) -> int:
+        """
+        Get the capacity of the school
+        :return: the capacity
+        """
+        return self.capacity
+
+    def getName(self) -> str:
+        """
+        Get the name of the school
+        :return: the name
+        """
+        return self.name
+
+    def getCandidates(self) -> list:
+        """
+        Get candidates
+        :return:
+        """
+        return self.candidate
 
     def declineStudent(self) -> list:
         """
