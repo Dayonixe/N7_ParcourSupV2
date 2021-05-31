@@ -50,7 +50,7 @@ class userInteraction:
             capacity = input("Entrer la capacité de l'école '" + name + "' : ")
             try:
                 intCapacity = int(capacity)
-                if (intCapacity > 0):
+                if (intCapacity >= 0):
                     return intCapacity
                 else:
                     print(warningColor + "Warning: La capacité doit être supérieur à 0 !"
