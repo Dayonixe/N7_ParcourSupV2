@@ -5,18 +5,13 @@ class Student:
     """
     Class student
     """
-    def __init__(self) -> None:
+    def __init__(self, name: str) -> None:
         """
-        Constructor of student class
+        Constructor of student class with name
+        :param name: name of the student
         """
-        pass
-
-    def __init__(self, preferences: list) -> None:
-        """
-        Constructor of student class with list of preferences
-        :param preferences:
-        """
-        self.setPreferences(preferences)
+        self.name = name
+        self.preferences = list()
 
     def setPreferences(self, preferences: list) -> None:
         """
@@ -29,17 +24,24 @@ class Student:
     def getFirstChoice(self) -> School:
         """
         Get the student's school first choice
-        :return:
+        :return: First school on the preferences list
         """
         return self.preferences[0]
+
+    def getName(self) -> str:
+        """
+        Get the name of the student
+        :return: The name
+        """
+        return self.name
 
     def removeFirstChoice(self) -> bool:
         """
         Remove the actual first choice of the student
-        :return:
+        :return: True if the first choice has been removed, False otherwise (the list is empty)
         """
         if len(self.preferences) > 0:
             self.preferences.pop(0)
             return True
         else:
-            return False
+            return False    # ERROR!
