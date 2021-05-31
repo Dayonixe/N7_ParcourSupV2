@@ -63,6 +63,13 @@ class School:
         """
         return self.name
 
+    def getCandidates(self) -> list:
+        """
+        Get candidates
+        :return:
+        """
+        return self.candidate
+
     def declineStudent(self) -> list:
         """
         The capacity of the school is exceed, removes and returns the less preferred students
