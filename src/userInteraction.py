@@ -58,6 +58,3 @@ class userInteraction:
             except:
                 print(warningColor + "Warning: Vous devez entrer un entier !"
                       + resetColor)
-
-if __name__ == '__main__':
-    userInteraction.schoolCapacity("N7")
