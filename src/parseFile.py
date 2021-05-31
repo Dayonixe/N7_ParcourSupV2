@@ -56,6 +56,7 @@ class parseFile:
     def getNbCol(data: list) -> int:
         """
         Renvoie le nombre de colonnes du fichier CSV
+        :param data: Tableau 2D des données d'un fichier CSV
         :return: Integer
         """
         return len(parseFile.getNameCol(data))
@@ -63,6 +64,48 @@ class parseFile:
     def getNbRow(data: list) -> int:
         """
         Renvoie le nombre de lignes du fichier CSV
+        :param data: Tableau 2D des données d'un fichier CSV
         :return: Integer
         """
         return len(parseFile.getNameRow(data))
+
+    def getPref(data: list, index: int) -> dict:
+        """
+        Renvoie un dictionnaire dans l'ordre de ses préférences
+        :param data: Tableau 2D des données d'un fichier CSV
+        :param index: Sens de lecture
+        :return: Dictionary
+        """
+        preferenceDict = {}
+        for row in range(len(data)):
+            tempDict = {}
+            for col in range(len(data[row])):
+                if (row > 0 and col > 0):
+                    preferenceIndex = data[row][col].split(",")
+                    tempDict[int(preferenceIndex[index])] = data[0][col]
+            preferenceDict[data[row][0]] = list(dict(sorted(tempDict.items())).values())
+        preferenceDict.pop('')
+        return preferenceDict
+
+    def getPrefCol(data: list) -> dict:
+        """
+        Renvoie un dictionnaire avec comme clef les valeurs de chaque colonne
+        :param data: Tableau 2D des données d'un fichier CSV
+        :return: Dictionary
+        """
+        invertTable = []
+        for col in range(len(data[0])):
+            list = []
+            for row in range(len(data)):
+                list.append(data[row][col])
+            invertTable.append(list)
+
+        return parseFile.getPref(invertTable, 1)
+
+    def getPrefRow(data: list) -> dict:
+        """
+        Renvoie un dictionnaire avec comme clef les valeurs de chaque ligne
+        :param data: Tableau 2D des données d'un fichier CSV
+        :return: Dictionary
+        """
+        return parseFile.getPref(data, 0)
