@@ -15,7 +15,7 @@ class userInteraction:
         checkName = name.split(".")
 
         if (len(checkName) < 2 or len(checkName) > 2 or checkName[1] != "csv"):
-            print(warningColor + "Warning: Nom de fichier incorrect"
+            print(warningColor + "Warning: Nom de fichier incorrect !"
                   + resetColor)
             sys.exit()
 
@@ -34,3 +34,30 @@ class userInteraction:
                 return 'R'
             elif (bind.lower() in ['c', 'col', 'column', 'columns', 'colonne', 'colonnes']):
                 return 'C'
+
+    @staticmethod
+    def schoolCapacity(name: str) -> int:
+        """
+        Demande à l'utilisateur quelle est la capacité de l'école passée en paramètre
+        :param name: Nom de l'école
+        :return: Integer
+        """
+        warningColor = '\033[93m'
+        resetColor = '\033[0m'
+
+        isValid = False
+        while not isValid:
+            capacity = input("Entrer la capacité de l'école '" + name + "' : ")
+            try:
+                intCapacity = int(capacity)
+                if (intCapacity > 0):
+                    return intCapacity
+                else:
+                    print(warningColor + "Warning: La capacité doit être supérieur à 0 !"
+                          + resetColor)
+            except:
+                print(warningColor + "Warning: Vous devez entrer un entier !"
+                      + resetColor)
+
+if __name__ == '__main__':
+    userInteraction.schoolCapacity("N7")
