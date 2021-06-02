@@ -76,7 +76,7 @@ class School:
         """
         declinedStudentList = list()
 
-        def indexOf(student) -> int:
+        def getPreferenceOf(student) -> int:
             """
             Get the index of the student in the preferences
             :param student:
@@ -85,7 +85,7 @@ class School:
             for i in range(0, len(self.preferences)):
                 if self.preferences[i] == student:
                     return i
-            return -1
+            #return -1
 
         def getLessFavorite():
             """
@@ -94,9 +94,11 @@ class School:
             """
             # Get the place (the index) of the less preferred student
             index = 0
+            higherPreference = 0
             for y in range(0, len(self.candidate)):
-                indexStudent = indexOf(self.candidate[y])
-                if indexStudent > index:
+                preferenceStudent = getPreferenceOf(self.candidate[y])
+                if preferenceStudent > higherPreference:
+                    higherPreference = preferenceStudent
                     index = y
 
             # Remove him from the candidate list

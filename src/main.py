@@ -97,7 +97,7 @@ def main():
         raise ValueError("Not enough places for all students : sum(school.capacity) < sum(students)")
 
     # 5. Exécution de l'algorithme
-    nbRound = StableMarriage.marriage(students, schools)
+    nbRound = StableMarriage.marriage(students, schools, False)
 
     # 6. Output
     afficheRes(schools)
