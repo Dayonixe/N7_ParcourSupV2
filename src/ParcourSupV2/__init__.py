@@ -1,1 +1,3 @@
-__all__ = ["School", "Student", "StableMarriage"]
+from .StudentModule import Student
+from .SchoolModule import School
+from .StableMarriage import marriage

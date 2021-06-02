@@ -4,7 +4,7 @@ def marriage(students: list, schools: list) -> int:
 
     while not (len(notAssignedStudents) == 0):
         # Morning : Every students without school apply for their preferred
-        for student in students:
+        for student in notAssignedStudents:
             school = student.getFirstChoice()
             school.addCandidate(student)
         notAssignedStudents = list()
