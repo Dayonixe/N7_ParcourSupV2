@@ -11,9 +11,21 @@ Team : Charly Ginevra & Théo Pirouelle
 ## Table of contents
 - [Installation guides](#installation-guides)
   * [Linux](#linux)
-    + [Python's installation](#python's-installation)
-  * [Git](#git)
-  * [Projet](#projet)
+    + [Python's installation](#pythons-installation)
+    + [Program installation](#program-installation)
+    + [Program launch](#program-launch)
+  * [Windows](#windows)
+    + [Python's installation](#pythons-installation-1)
+    + [Program installation](#program-installation-1)
+    + [Program launch](#program-launch-1)
+  * [MacOS](#macos)
+    + [Python's installation](#pythons-installation-2)
+    + [Program installation](#program-installation-2)
+    + [Program launch](#program-launch-2)
+- [Program use](#program-use)
+  * [CSV file format](#csv-file-format)
+  * [Program use](#program-use-1)
+  * [Possible errors](#possible-errors)
 
 ---
 
@@ -254,7 +266,7 @@ The `.csv` file should be placed in the `src/csvFiles/` directory.
 At the start of the program, the user is asked for the full name of the `.csv` file:
 The file name must be in the format `filename.csv`.
 
-![Screenshot 2021-06-06 152423](C:\Users\Theo\Desktop\Screenshot 2021-06-06 152423.png)
+![PU1](doc/pictures/Screenshot 2021-06-06 152423.png)
 
 
 
