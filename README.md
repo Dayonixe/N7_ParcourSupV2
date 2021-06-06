@@ -266,7 +266,7 @@ The `.csv` file should be placed in the `src/csvFiles/` directory.
 At the start of the program, the user is asked for the full name of the `.csv` file:
 The file name must be in the format `filename.csv`.
 
-![PU1](doc/pictures/Screenshot 2021-06-06 152423.png)
+<img src="doc/pictures/Screenshot 2021-06-06 152423.png" alt="PU1" />
 
 
 
