@@ -8,7 +8,24 @@ Team : Charly Ginevra & Théo Pirouelle
 
 ---
 
-[TOC]
+## Table of contents
+- [Installation guides](#installation-guides)
+  * [Linux](#linux)
+    + [Python's installation](#pythons-installation)
+    + [Program installation](#program-installation)
+    + [Program launch](#program-launch)
+  * [Windows](#windows)
+    + [Python's installation](#pythons-installation-1)
+    + [Program installation](#program-installation-1)
+    + [Program launch](#program-launch-1)
+  * [MacOS](#macos)
+    + [Python's installation](#pythons-installation-2)
+    + [Program installation](#program-installation-2)
+    + [Program launch](#program-launch-2)
+- [Program use](#program-use)
+  * [CSV file format](#csv-file-format)
+  * [Program use](#program-use-1)
+  * [Possible errors](#possible-errors)
 
 ---
 
@@ -249,7 +266,7 @@ The `.csv` file should be placed in the `src/csvFiles/` directory.
 At the start of the program, the user is asked for the full name of the `.csv` file:
 The file name must be in the format `filename.csv`.
 
-![Screenshot 2021-06-06 152423](C:\Users\Theo\Desktop\Screenshot 2021-06-06 152423.png)
+<img src="doc/pictures/Screenshot 2021-06-06 152423.png" alt="PU" />
 
 
 
@@ -259,14 +276,14 @@ The answer given can be:
 - `r`, `row`, `rows`, `l`, `ligne`, `lignes` for the binding on the header row ;
 - `c`, `col`, `column`, `columns`, `colonne`, `colonnes` for the binding on the header column.
 
-![Screenshot 2021-06-06 155624](C:\Users\Theo\Desktop\Screenshot 2021-06-06 155624.png)
+<img src="doc/pictures/Screenshot 2021-06-06 155624.png" alt="PU" />
 
 
 
 The program asks the user for the capacity for each school.
 The capacity provided must be higher or equal to 0.
 
-![Screenshot 2021-06-06 160259](C:\Users\Theo\Desktop\Screenshot 2021-06-06 160259.png)
+<img src="doc/pictures/Screenshot 2021-06-06 160259.png" alt="PU" />
 
 
 
@@ -275,7 +292,7 @@ The result is then displayed.
 The program first displays the students assigned to each school with the name of the school and the names of the students in a box.
 In the second step, it displays the number of rounds the program made to assign all students to a school.
 
-![Screenshot 2021-06-06 163039](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163039.png)
+<img src="doc/pictures/Screenshot 2021-06-06 163039.png" alt="PU" />
 
 
 
@@ -283,22 +300,22 @@ In the second step, it displays the number of rounds the program made to assign 
 
 When asking the user for a `.csv` file name, if the proposed name does not contain the extension of a `.csv` file, the `Warning: Incorrect file name !` error appears.
 
-![Screenshot 2021-06-06 163342](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163342.png)
+<img src="doc/pictures/Screenshot 2021-06-06 163342.png" alt="PU" />
 
 
 
 When asking the user for the `.csv` file name, if the proposed name is not found in the expected directory, the `Warning: CSV file not found` error appears.
 
-![Screenshot 2021-06-06 163459](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163459.png)
+<img src="doc/pictures/Screenshot 2021-06-06 163459.png" alt="PU" />
 
 
 
 When asking the user for the capacity of a school, if the value entered is not an integer, the `Warning: You must enter an integer !` error appears.
 
-![Screenshot 2021-06-06 163725](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163725.png)
+<img src="doc/pictures/Screenshot 2021-06-06 163725.png" alt="PU" />
 
 
 
 When asking the user for the capacity of a school, if the value entered is less than 0, the `Warning: The capacity must be higher than 0 !` error appears.
 
-![Screenshot 2021-06-06 163759](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163759.png)
+<img src="doc/pictures/Screenshot 2021-06-06 163759.png" alt="PU" />
