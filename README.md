@@ -1,4 +1,4 @@
-# ParcourSupV2
+# User manual
 
 Team : Charly Ginevra & Théo Pirouelle
 
@@ -8,141 +8,297 @@ Team : Charly Ginevra & Théo Pirouelle
 
 ---
 
-## Table of contents
-
-- [Project guidelines](#project-guidelines)
-- [Implementation of the project](#implementation-of-the-project)
-  - [Integrity constraints](#integrity-constraints)
-  - [Actors](#actors)
-  - [Algorithm](#algorithm)
+[TOC]
 
 ---
 
-## Project guidelines
-Implement a student admission program using the stable marriage algorithm
-Teams of 2
+# Installation guides
 
-- Input
-  - Student and school preferences from a file in the format used TD
-  - User selects who does the biding
-- Output
-  - Student to school assignment
-  - Number of rounds needed to converge
-- Evaluation
-  - Demo during last session, June 3
-  - Report + code by June 13
+## Linux
 
+### Python's installation
 
+If you are using Ubuntu 16.10 or newer, then you can easily install Python 3.6 with the following commands:
 
-## Implementation of the project
-
-### Integrity constraints
-
-- sum(ecole.capacité) >= sum(eleve)
-
-### Acteurs
-
-- École
-  - Capacité
-  - Préférences sur les élèves
-  - Liste des postulants
-- Élevé
-  - Préférences sur les écoles
-
-### Algorithme
-
-- Input :
-  - Données depuis un fichier `.csv` placé à la racine du projet
-  - Demande à l'utilisateur qui fait l'association (lignes/colonnes)
-  - Demande à l'utilisateur les capacités de chaque école
-- Output :
-  - Nombre de round
-  - Résultat dans la console (+ dans le `.csv`)
-- Arrêt du code :
-  - Lorsque tous les élèves ont une école
-  - Lorsqu'il n'y a plus de conflit (conflit = capacité d'une école dépassée)
-
-#### Description des différents types
-
-##### Etudiant
-
-```python
-class student:
-  def __init__(self, preferences):
-    self.preferences = preferences
-
-  def getFirstChoice(self):
-    return self.preferences[0]
-
-  def removeFirstChoice(self):
-    self.preferences.pop(0)
+```sh
+sudo apt-get update
+sudo apt-get install python3.6
 ```
 
-##### Ecole
-```python
-class school:
-  def __init__(self, capacity, preferences):
-    self.capacity = capacity
-    self.preferences = prefences
-    self.postulants = list()
 
-  def isOverLoaded():
+
+If you are using another version of Ubuntu (e.g. the latest LTS release) or you want to use a more current Python, we recommend using the [deadsnakes PPA](https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa) to install Python 3.8:
+
+```sh
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.8
 ```
 
-##### Etapes d'exécution 
 
-1. Vérification de présence du fichier (sinon affichage d'un warning)
-2. Demande à l'utilisateur qui fait l'association
-3. Demander à l'utilisateur les capacités de chaque école
-4. Vérification : sum(ecole.capacité) >= sum(eleve)
-5. Exécution de l'algorithme
-6. Output
 
-##### Fonction
+If you are using other Linux distribution, chances are you already have Python 3 pre-installed as well. If not, use your distribution’s package manager. For example on Fedora, you would use `dnf`:
 
-```
-// nom : marriage_algo
-// sémantique: effectue l'algorithme du marriage stable pour parcousupv2
-// paramètres:
-// écoles : In/Out list<école>; -- Rôle du paramètre
-// étudiants : In/Out list<étudiant>; -- liste d'étudiants
-// nbRound : Out Envier; -- nombre round pour la résolution du problème
-// pré-condition: sum(ecole.capacité) >= sum(eleve)
-// post-condition: 
-//      -- Tous les étudiants sont répartis dans les "postulants" des différentes écoles
-//      -- Tous les étudiants possèdent une école
-fonction marriage_algo(étudiants: list<étudiant>; écoles: list<école>) : Integer
-début
-    nbRound := 0
-    etudiants_non_assignés := copy(etudiants)
-    tant que (non etudiants_non_assignés.est_vide()) faire
-        // Matin : Tous les etudiants sans école postulent à une école
-        pour etudiant dans etudiants_non_assignés faire
-            prefSchool := etudiant.getFirstChoice()
-            prefSchool.addPostulant(etudiant)
-        fpour
-        etudiants_non_assignés := list() // remise à zéro de la liste
-
-        // Après-midi : Les écoles vérifient si leur capacité n'est pas dépassée, auquel cas elle supprime les étudiants les moins désirés
-        pour ecole dans ecoles faire
-            si ecole.surchagé alors // conflit
-                pour eleve dans ecole.refuseEleves() faire
-                    etudiants_non_assignés.append(eleve)
-                fpour
-            fsi
-        fpour
-
-        // Soir : Les étudiants les moins désirés supprime leur premier choix
-        pour etudiant dans etudiants_non_assignés faire
-            etudiant.supprimerPremierChoix()
-        fpour
-
-        nbRound := nbRound + 1
-        
-    ftant
-        
-    retourne nbRound
-fin
+```sh
+sudo dnf install python3
 ```
 
-*Note: l'ouvrire avec le plugin **algo** de vscode*
+
+
+To see which version of Python 3 you have installed, open a command prompt and run:
+
+```sh
+python3 --version
+```
+
+
+
+### Program installation
+
+Install `unzip` on Linux:
+
+```sh
+sudo apt install unzip
+```
+
+
+
+To unzip a `.zip` file:
+
+```sh
+# In current directory
+unzip filename.zip
+
+# To different directory
+unzip filename.zip -d /path/to/directory
+```
+
+
+
+### Program launch
+
+Open a terminal, move to the `src` directory of the project with the `cd` command.
+
+To run the program, enter the command:
+
+```sh
+python3 main.py
+```
+
+
+
+
+
+## Windows
+
+### Python's installation
+
+Find all download resources at [python.org](https://www.python.org/downloads/windows/).
+
+Full details of the python installation documentation at [docs.python.org](https://docs.python.org/3/using/windows.html).
+
+
+
+### Program installation
+
+Install [Winrar](https://www.win-rar.com/download.html) or [7zip](https://www.7-zip.org/download.html).
+
+To unzip the file `fileName.zip` right click on it and select extract.
+
+
+
+### Program launch
+
+Open a terminal, move to the `src` directory of the project with the command `cd`.
+
+To run the program, enter the command:
+
+```sh
+py main.py
+```
+
+
+
+
+
+## MacOS
+
+### Python's installation
+
+Find all download resources at [python.org](https://www.python.org/downloads/mac-osx/).
+
+
+
+You can also download [Xcode](https://developer.apple.com/xcode/). If you are doing a fresh install of [Xcode](https://developer.apple.com/xcode/), you will also need to add the command line tools by running the following command in the terminal:
+
+```sh
+xcode-select --install
+```
+
+
+
+[Homebrew](http://brew.sh/#install) is a decent package manager, to install it open the terminal and run :
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+
+
+Once you’ve installed [Homebrew](http://brew.sh/#install), insert the [Homebrew](http://brew.sh/#install) directory at the top of your `PATH` environment variable. You can do this by adding the following line at the bottom of your `~/.profile` file:
+
+```sh
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+```
+
+
+
+If you have OS X 10.12 (Sierra) or older use this line instead:
+
+```sh
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+```
+
+
+
+Now, we can install Python 3:
+
+```sh
+brew install python
+```
+
+
+
+At this point, you have the system Python 2.7 available, potentially the [Homebrew version of Python 2](https://docs.python-guide.org/starting/install/osx/#install-osx) installed, and the Homebrew version of Python 3 as well.
+
+- `python` will launch the Homebrew-installed Python 3 interpreter.
+- `python2` will launch the Homebrew-installed Python 2 interpreter (if any).
+- `python3` will launch the Homebrew-installed Python 3 interpreter.
+
+
+
+If the [Homebrew](http://brew.sh/#install) version of Python 2 is installed then `pip2` will point to Python 2. If the [Homebrew](http://brew.sh/#install) version of Python 3 is installed then `pip` will point to Python 3.
+
+To see which version of Python you have, open a terminal and run:
+
+```sh
+python --version
+```
+
+
+
+### Program installation
+
+To unzip the file `fileName.zip`, double click on the file.
+
+
+
+### Program launch
+
+Open a terminal, move to the `src` directory of the project with the command `cd`.
+
+To run the program, enter the command:
+
+```sh
+python3 main.py
+```
+
+
+
+
+
+# Program use
+
+## CSV file format
+
+The `.csv` file format should be as follows:
+
+|         | Name1                  | Name2                  | Name3                  |
+| ------- | ---------------------- | ---------------------- | ---------------------- |
+| School1 | PrefSchool,PrefStudent | PrefSchool,PrefStudent | PrefSchool,PrefStudent |
+| School2 | PrefSchool,PrefStudent | PrefSchool,PrefStudent | PrefSchool,PrefStudent |
+| School3 | PrefSchool,PrefStudent | PrefSchool,PrefStudent | PrefSchool,PrefStudent |
+
+or
+
+|       | School1                | School2                | School3                |
+| ----- | ---------------------- | ---------------------- | ---------------------- |
+| Name1 | PrefStudent,PrefSchool | PrefStudent,PrefSchool | PrefStudent,PrefSchool |
+| Name2 | PrefStudent,PrefSchool | PrefStudent,PrefSchool | PrefStudent,PrefSchool |
+| Name3 | PrefStudent,PrefSchool | PrefStudent,PrefSchool | PrefStudent,PrefSchool |
+
+For example:
+
+|          | Tom  | Bob  | Alice |
+| -------- | ---- | ---- | ----- |
+| ENSEEIHT | 1,2  | 2,1  | 3,3   |
+| INSA     | 2,1  | 1,2  | 3,1   |
+| ENSIMAG  | 1,3  | 2,3  | 3,2   |
+
+
+
+With any number of columns and rows.
+
+The `.csv` file should be placed in the `src/csvFiles/` directory.
+
+
+
+## Program use
+
+At the start of the program, the user is asked for the full name of the `.csv` file:
+The file name must be in the format `filename.csv`.
+
+![Screenshot 2021-06-06 152423](C:\Users\Theo\Desktop\Screenshot 2021-06-06 152423.png)
+
+
+
+The user is then asked if the association is made on the elements of the row header or the column header.
+The answer given can be:
+
+- `r`, `row`, `rows`, `l`, `ligne`, `lignes` for the binding on the header row ;
+- `c`, `col`, `column`, `columns`, `colonne`, `colonnes` for the binding on the header column.
+
+![Screenshot 2021-06-06 155624](C:\Users\Theo\Desktop\Screenshot 2021-06-06 155624.png)
+
+
+
+The program asks the user for the capacity for each school.
+The capacity provided must be higher or equal to 0.
+
+![Screenshot 2021-06-06 160259](C:\Users\Theo\Desktop\Screenshot 2021-06-06 160259.png)
+
+
+
+The result is then displayed.
+
+The program first displays the students assigned to each school with the name of the school and the names of the students in a box.
+In the second step, it displays the number of rounds the program made to assign all students to a school.
+
+![Screenshot 2021-06-06 163039](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163039.png)
+
+
+
+## Possible errors
+
+When asking the user for a `.csv` file name, if the proposed name does not contain the extension of a `.csv` file, the `Warning: Incorrect file name !` error appears.
+
+![Screenshot 2021-06-06 163342](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163342.png)
+
+
+
+When asking the user for the `.csv` file name, if the proposed name is not found in the expected directory, the `Warning: CSV file not found` error appears.
+
+![Screenshot 2021-06-06 163459](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163459.png)
+
+
+
+When asking the user for the capacity of a school, if the value entered is not an integer, the `Warning: You must enter an integer !` error appears.
+
+![Screenshot 2021-06-06 163725](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163725.png)
+
+
+
+When asking the user for the capacity of a school, if the value entered is less than 0, the `Warning: The capacity must be higher than 0 !` error appears.
+
+![Screenshot 2021-06-06 163759](C:\Users\Theo\Desktop\Screenshot 2021-06-06 163759.png)
