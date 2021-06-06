@@ -95,7 +95,7 @@ def main():
 
     # 6. Output
     displayResult(schools)
-    print("> Number of rounds : \033[92m{}\033[0m".format(nbRound))
+    print("> Number of rounds : \033[92m{}\033[0m\n".format(nbRound))
 
 if __name__ == '__main__':
     main()
