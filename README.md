@@ -8,7 +8,12 @@ Team : Charly Ginevra & Théo Pirouelle
 
 ---
 
-[TOC]
+## Table of contents
+- [Installation guides](#installation-guides)
+  * [Linux](#linux)
+    + [Python's installation](#python's-installation)
+  * [Git](#git)
+  * [Projet](#projet)
 
 ---
 
