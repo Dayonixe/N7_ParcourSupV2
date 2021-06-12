@@ -3,9 +3,23 @@
 Team : Charly Ginevra & Théo Pirouelle
 <img src="https://img.shields.io/badge/language-python-blue?style=flat-square" alt="laguage-python" />
 
-___
+---
 
-[TOC]
+## Table of contents
+- [Introduction](#introduction)
+  * [The stable marriage algorithm](#the-stable-marriage-algorithm)
+  * [Theme of the project](#theme-of-the-project)
+  * [Vocabularies](#vocabularies)
+- [Choices made](#choices-made)
+  * [Project gestion](#project-gestion)
+  * [Technology used](#technology-used)
+  * [Data structures](#data-structures)
+    + [Student](#student)
+    + [School](#school)
+- [The algorithm](#the-algorithm)
+  * [Without capacities](#without-capacities)
+  * [With capacities](#with-capacities)
+- [Conclusion](#conclusion)
 
 ---
 
