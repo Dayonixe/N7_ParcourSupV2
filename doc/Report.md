@@ -1,6 +1,7 @@
 <h1>Project report : Graph theory</h1>
 
 Team : Charly Ginevra & Théo Pirouelle
+
 <img src="https://img.shields.io/badge/language-python-blue?style=flat-square" alt="laguage-python" />
 
 ---
